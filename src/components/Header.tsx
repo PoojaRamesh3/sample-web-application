@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const logo = require("../assets/signup.png");
@@ -15,33 +15,20 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a
+                <Link
                   className="nav-link active text-white"
                   aria-current="page"
-                  href="/home"
+                  to="/home"
                 >
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-white" href="/">
-                  Link
-                </a>
+                <Link className="nav-link text-white" to="/">
+                  Logout
+                </Link>
               </li>
             </ul>
-            <form className="d-flex">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-              />
-              <button
-                className="btn btn-outline-success bg-primary text-white bg-gradient"
-                type="submit"
-              >
-                Search
-              </button>
-            </form>
           </div>
         </div>
       </nav>
