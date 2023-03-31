@@ -3,10 +3,7 @@ import { useState } from "react";
 
 const SideBar = () => {
   const logo = require("../assets/avatar.png");
-  const [isActive, setActive] = useState(false);
-  const onClickHandler = () => {
-    setActive(!isActive);
-  };
+
   return (
     <div>
       <div className="text-white bg-secondary sidenav">
@@ -23,56 +20,29 @@ const SideBar = () => {
           <li className="nav-item">
             <Link
               to="/home"
-              className={
-                isActive ? "nav-link text-white active" : "nav-link text-white"
-              }
+              className="nav-link text-white"
               aria-current="page"
-              onClick={onClickHandler}
             >
               Home
             </Link>
           </li>
           <li>
-            <Link
-              to="/dashboard"
-              className={
-                isActive ? "nav-link text-white active" : "nav-link text-white"
-              }
-              onClick={onClickHandler}
-            >
+            <Link to="/dashboard" className="nav-link text-white">
               Dashboard
             </Link>
           </li>
           <li>
-            <Link
-              to="/orders"
-              className={
-                isActive ? "nav-link text-white active" : "nav-link text-white"
-              }
-              onClick={onClickHandler}
-            >
+            <Link to="/orders" className="nav-link text-white">
               Orders
             </Link>
           </li>
           <li>
-            <Link
-              to="/products"
-              className={
-                isActive ? "nav-link text-white active" : "nav-link text-white"
-              }
-              onClick={onClickHandler}
-            >
+            <Link to="/products" className="nav-link text-white">
               Products
             </Link>
           </li>
           <li>
-            <Link
-              to="/customers"
-              className={
-                isActive ? "nav-link text-white active" : "nav-link text-white"
-              }
-              onClick={onClickHandler}
-            >
+            <Link to="/customers" className="nav-link text-white">
               Customers
             </Link>
           </li>

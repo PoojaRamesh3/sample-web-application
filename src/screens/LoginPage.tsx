@@ -9,8 +9,6 @@ const LoginPage = () => {
   const navigate = useNavigate();
 
   const onLogin = () => {
-    console.log("username,", username);
-    console.log("password,", password);
     if (username === "pooja.ramesh331@gmail.com" && password === "123") {
       navigate("/home");
     } else {
