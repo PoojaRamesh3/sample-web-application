@@ -14,7 +14,7 @@ const LoginPage = () => {
     if (username === "pooja.ramesh331@gmail.com" && password === "123") {
       navigate("/home");
     } else {
-      alert("Login failed ! Invalid User Details");
+      alert("Login failed! Invalid User Details");
     }
   };
 
@@ -39,7 +39,6 @@ const LoginPage = () => {
           <label className="col-sm-2 col-form-label p-0 pb-2 pt-2">
             Password
           </label>
-
           <input
             type="password"
             className="form-control"
