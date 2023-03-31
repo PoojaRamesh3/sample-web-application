@@ -1,62 +1,63 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-interface inputFields {
-  firstName: string;
-  lastName: string;
-  email: string;
-}
-
-export default function LoginPage() {
+const LoginPage = () => {
   const logo = require("../assets/signup.png");
-  const [userInfo, setUserInfo] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-  const userInputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = e.target.value;
-    setUserInfo(newValue);
-    console.log(newValue);
+  const navigate = useNavigate();
+
+  const onLogin = () => {
+    console.log("username,", username);
+    console.log("password,", password);
+    if (username === "pooja.ramesh331@gmail.com" && password === "123") {
+      navigate("/home");
+    } else {
+      alert("Login failed ! Invalid User Details");
+    }
   };
-
-  const userEnteredData = {
-    enteredInfo: userInfo,
-  };
-
-  console.log(userEnteredData);
 
   return (
     <div className="outer-form">
       <div className="form-signin w-100 shadow-lg p-5 bg-body rounded">
-        <form action="/">
-          <img className="mb-4" src={logo} alt="" width="72" height="72" />
-          <div className="pb-4">
-            <h1>Sign-In Here</h1>
-          </div>
-          <div className="form-floating pb-1">
-            <label className="form-label">User Name</label>
-            <input
-              type="text"
-              className="form-control mb-4"
-              placeholder="Pooja R"
-              onChange={userInputHandler}
-            />
-          </div>
-          <div className="form-floating pb-1">
-            <label htmlFor="floatingInput">Password</label>
-            <input
-              type="password"
-              className="form-control mb-3"
-              onChange={userInputHandler}
-            />
-          </div>
-          <div className="pt-4">
-            <button
-              className="w-100 btn btn-lg btn-color text-uppercase"
-              type="submit"
-            >
-              Login
-            </button>
-          </div>
-        </form>
+        <img className="mb-4" src={logo} alt="" width="72" height="72" />
+        <div className="pb-4">
+          <h1>Log-In Here</h1>
+        </div>
+        <div className="row p-3 pb-0 pt-0">
+          <label className="col-sm-2 col-form-label p-0 pb-2">Email</label>
+          <input
+            type="email"
+            className="form-control"
+            id="exampleFormControlInput1"
+            placeholder="name@example.com"
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </div>
+        <div className="row p-3 pb-0 pt-0">
+          <label className="col-sm-2 col-form-label p-0 pb-2 pt-2">
+            Password
+          </label>
+
+          <input
+            type="password"
+            className="form-control"
+            id="inputPassword"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <div className="pt-4">
+          <button
+            onClick={() => onLogin()}
+            className="w-100 btn btn-lg btn-color text-uppercase"
+            type="submit"
+          >
+            Login
+          </button>
+        </div>
       </div>
     </div>
   );
-}
+};
+export default LoginPage;

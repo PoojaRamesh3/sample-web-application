@@ -1,10 +1,10 @@
+import Router from "./Router";
 import "./App.css";
-import LoginPage from "./screens/LoginPage";
 
 function App() {
   return (
     <div className="App">
-      <LoginPage />
+      <Router />
     </div>
   );
 }
