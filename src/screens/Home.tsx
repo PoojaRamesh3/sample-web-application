@@ -7,27 +7,32 @@ const Home = () => {
   const cardContents = [
     {
       id: 1,
-      title: "Card title 1",
+      title: "Card title",
       desc: "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
     },
     {
       id: 2,
-      title: "Card title 2",
+      title: "Card title",
       desc: "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
     },
     {
       id: 3,
-      title: "Card title 3",
+      title: "Card title",
       desc: "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
     },
     {
       id: 4,
-      title: "Card title 4",
+      title: "Card title",
       desc: "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
     },
     {
       id: 5,
-      title: "Card title 5",
+      title: "Card title",
+      desc: "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+    },
+    {
+      id: 6,
+      title: "Card title",
       desc: "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
     },
   ];
@@ -40,7 +45,7 @@ const Home = () => {
         <div className="row row-cols-1 row-cols-md-3 g-4 justify-content-evenly mt-3 w-100">
           {cardContents.map((item, index) => (
             <Card
-              key={index}
+              key={item.id}
               cardTitle={item.title}
               cardDescription={item.desc}
             />
