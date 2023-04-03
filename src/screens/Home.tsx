@@ -37,7 +37,7 @@ const Home = () => {
     },
   ];
   return (
-    <div>
+    <>
       <Header />
       <SideBar />
       <div className="home position-absolute">
@@ -53,7 +53,7 @@ const Home = () => {
         </div>
       </div>
       <Footer />
-    </div>
+    </>
   );
 };
 
