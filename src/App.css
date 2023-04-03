@@ -56,6 +56,11 @@ body {
   z-index: 600;
 }
 
+.home {
+  top: 7%;
+  left: 23%;
+}
+
 @media (max-width: 991.98px) {
   .sidebar {
     width: 100%;

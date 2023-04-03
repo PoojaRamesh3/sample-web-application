@@ -3,6 +3,34 @@ import { Link } from "react-router-dom";
 const SideBar = () => {
   const logo = require("../assets/avatar.png");
 
+  const sideBarLists = [
+    {
+      id: 1,
+      title: "Home",
+      url: "/home",
+    },
+    {
+      id: 2,
+      title: "DashBoard",
+      url: "/dashboard",
+    },
+    {
+      id: 3,
+      title: "Orders",
+      url: "/orders",
+    },
+    {
+      id: 4,
+      title: "Products",
+      url: "/products",
+    },
+    {
+      id: 5,
+      title: "Customers",
+      url: "/customers",
+    },
+  ];
+
   return (
     <div>
       <div className="text-white bg-secondary sidenav">
@@ -17,33 +45,16 @@ const SideBar = () => {
         </div>
         <ul className="nav nav-pills flex-column mb-auto">
           <li className="nav-item">
-            <Link
-              to="/home"
-              className="nav-link text-white"
-              aria-current="page"
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/dashboard" className="nav-link text-white">
-              Dashboard
-            </Link>
-          </li>
-          <li>
-            <Link to="/orders" className="nav-link text-white">
-              Orders
-            </Link>
-          </li>
-          <li>
-            <Link to="/products" className="nav-link text-white">
-              Products
-            </Link>
-          </li>
-          <li>
-            <Link to="/customers" className="nav-link text-white">
-              Customers
-            </Link>
+            {sideBarLists.map((item, index) => (
+              <Link
+                key={index}
+                to={item.url}
+                className="nav-link text-white"
+                aria-current="page"
+              >
+                {item.title}
+              </Link>
+            ))}
           </li>
         </ul>
       </div>
