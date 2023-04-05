@@ -24,6 +24,7 @@ const Table = () => {
   }, []);
 
   return (
+    //   tabel
     <>
       <table className="table table-striped">
         <thead>
