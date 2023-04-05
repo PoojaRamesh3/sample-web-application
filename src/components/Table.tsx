@@ -1,14 +1,20 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-const baseURL = "https://jsonplaceholder.typicode.com/users";
-
 const Table = () => {
-  const [data, setData] = useState<any[]>([]);
+  interface FullName {
+    id: number;
+    name: string;
+    username: string;
+    email: string;
+    phone: number;
+  }
+
+  const baseURL = "https://jsonplaceholder.typicode.com/users";
+  const [data, setData] = useState<FullName[]>([]);
 
   const getData = () => {
     axios.get(baseURL).then((response) => {
-      console.log(response.data);
       setData(response.data);
     });
   };
@@ -19,7 +25,7 @@ const Table = () => {
 
   return (
     <>
-      <table className="table">
+      <table className="table table-striped">
         <thead>
           <tr>
             <th scope="col">Id</th>
@@ -30,7 +36,7 @@ const Table = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((item: any, index: any) => {
+          {data.map((item: any, index: number) => {
             return (
               <tr key={index}>
                 <td>{item.id}</td>
