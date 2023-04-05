@@ -1,5 +1,3 @@
-import React from "react";
-
 const Footer = () => {
   return (
     <div className="position-fixed bottom-0 start-0 end-0">
