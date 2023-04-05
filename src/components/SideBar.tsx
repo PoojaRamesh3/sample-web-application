@@ -26,8 +26,8 @@ const SideBar = () => {
     },
     {
       id: 5,
-      title: "Customers",
-      url: "/customers",
+      title: "Account",
+      url: "/account",
     },
   ];
 

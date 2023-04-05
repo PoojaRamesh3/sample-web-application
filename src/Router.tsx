@@ -4,7 +4,7 @@ import Home from "./screens/Home";
 import Dashboard from "./screens/Dashboard";
 import Orders from "./screens/Orders";
 import Products from "./screens/Products";
-import Customers from "./screens/Customers";
+import Account from "./screens/Account";
 
 const Router = () => {
   return (
@@ -15,7 +15,7 @@ const Router = () => {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/orders" element={<Orders />} />
         <Route path="/products" element={<Products />} />
-        <Route path="/customers" element={<Customers />} />
+        <Route path="/account" element={<Account />} />
       </Routes>
     </BrowserRouter>
   );
