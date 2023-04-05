@@ -40,7 +40,7 @@ const Home = () => {
     <>
       <Header />
       <SideBar />
-      <div className="home position-absolute">
+      <div className="outer-main position-absolute">
         <h1>Welcome Home!</h1>
         <div className="row row-cols-1 row-cols-md-3 g-4 justify-content-evenly mt-3 w-100">
           {cardContents.map((item, index) => (

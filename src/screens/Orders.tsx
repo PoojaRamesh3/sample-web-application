@@ -7,7 +7,7 @@ const Orders = () => {
     <div>
       <Header />
       <SideBar />
-      <div className="home position-absolute top-50 start-50 translate-middle">
+      <div className="outer-main position-absolute">
         <h2>Orders Will be displayed here!</h2>
       </div>
       <Footer />

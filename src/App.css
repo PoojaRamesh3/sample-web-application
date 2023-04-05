@@ -56,10 +56,14 @@ body {
   z-index: 600;
 }
 
-.home {
+.outer-main {
   top: 7%;
   left: 23%;
   max-width: 950px;
+}
+
+.outer-main h1 {
+  text-align: left;
 }
 
 @media (max-width: 991.98px) {

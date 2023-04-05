@@ -7,7 +7,7 @@ const Products = () => {
     <div>
       <Header />
       <SideBar />
-      <div className="home position-absolute top-50 start-50 translate-middle">
+      <div className="outer-main position-absolute">
         <h2>Products</h2>
       </div>
       <Footer />
