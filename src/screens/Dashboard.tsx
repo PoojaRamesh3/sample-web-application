@@ -34,7 +34,7 @@ const Dashboard = () => {
     getData();
   }, []);
   return (
-    <div>
+    <>
       <Header />
       <SideBar />
       <div className="outer-main position-absolute">
@@ -48,10 +48,10 @@ const Dashboard = () => {
             />
           ))}
         </div>
-        <Table data={data} />
+        <Table apiData={data} />
       </div>
       <Footer />
-    </div>
+    </>
   );
 };
 

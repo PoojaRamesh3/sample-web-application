@@ -32,32 +32,30 @@ const SideBar = () => {
   ];
 
   return (
-    <div>
-      <div className="text-white bg-secondary sidenav">
-        <div className="align-items-center pt-3">
-          <img className="rounded-circle w-50" src={logo} alt="..." />
-          <div className="card-body p-4">
-            <div className="-mb4">
-              <h3 className="h4 mb-0 text-dark">Johnson</h3>
-              <span className="text-white">CEO &amp; Founder</span>
-            </div>
+    <div className="text-white bg-secondary sidenav">
+      <div className="align-items-center pt-3">
+        <img className="rounded-circle w-50" src={logo} alt="..." />
+        <div className="card-body p-4">
+          <div className="-mb4">
+            <h3 className="h4 mb-0 text-dark">Johnson</h3>
+            <span className="text-white">CEO &amp; Founder</span>
           </div>
         </div>
-        <ul className="nav nav-pills flex-column mb-auto">
-          <li className="nav-item">
-            {sideBarLists.map((item, index) => (
-              <Link
-                key={index}
-                to={item.url}
-                className="nav-link text-white"
-                aria-current="page"
-              >
-                {item.title}
-              </Link>
-            ))}
-          </li>
-        </ul>
       </div>
+      <ul className="nav nav-pills flex-column mb-auto">
+        <li className="nav-item">
+          {sideBarLists.map((item, index) => (
+            <Link
+              key={index}
+              to={item.url}
+              className="nav-link text-white"
+              aria-current="page"
+            >
+              {item.title}
+            </Link>
+          ))}
+        </li>
+      </ul>
     </div>
   );
 };

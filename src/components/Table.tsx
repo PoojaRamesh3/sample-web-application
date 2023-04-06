@@ -12,7 +12,7 @@ const Table = (props: any) => {
           </tr>
         </thead>
         <tbody>
-          {props.data.map((item: any, index: number) => {
+          {props.apiData.map((item: any, index: number) => {
             return (
               <tr key={index}>
                 <td>{item.id}</td>
