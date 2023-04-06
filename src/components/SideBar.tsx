@@ -11,7 +11,7 @@ const SideBar = () => {
     },
     {
       id: 2,
-      title: "DashBoard",
+      title: "Dashboard",
       url: "/dashboard",
     },
     {
