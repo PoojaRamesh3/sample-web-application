@@ -2,9 +2,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import SideBar from "../components/SideBar";
 import Card from "../components/Card";
-import Table from "../components/Table";
 
-const Home = () => {
+const HomePage = () => {
   const cardContents = [
     {
       id: 1,
@@ -37,11 +36,10 @@ const Home = () => {
             />
           ))}
         </div>
-        <Table />
       </div>
       <Footer />
     </>
   );
 };
 
-export default Home;
+export default HomePage;

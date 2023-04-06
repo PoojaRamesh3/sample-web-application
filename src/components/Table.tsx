@@ -1,30 +1,5 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
-
-const Table = () => {
-  interface FullName {
-    id: number;
-    name: string;
-    username: string;
-    email: string;
-    phone: number;
-  }
-
-  const baseURL = "https://jsonplaceholder.typicode.com/users";
-  const [data, setData] = useState<FullName[]>([]);
-
-  const getData = () => {
-    axios.get(baseURL).then((response) => {
-      setData(response.data);
-    });
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
-
+const Table = (props: any) => {
   return (
-    //   tabel
     <>
       <table className="table table-striped">
         <thead>
@@ -37,7 +12,7 @@ const Table = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((item: any, index: number) => {
+          {props.data.map((item: any, index: number) => {
             return (
               <tr key={index}>
                 <td>{item.id}</td>

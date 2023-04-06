@@ -2,6 +2,9 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import SideBar from "../components/SideBar";
 import DashboardCard from "../components/DashboardCard";
+import Table from "../components/Table";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const Dashboard = () => {
   const cardContents = [
@@ -10,12 +13,26 @@ const Dashboard = () => {
       title: "Total Number of Orders",
       totalOrder: 3,
     },
-    {
-      id: 2,
-      title: "Recently Viewed Products",
-      totalOrder: 10,
-    },
   ];
+  interface info {
+    id: number;
+    name: string;
+    username: string;
+    email: string;
+    phone: number;
+  }
+  const baseURL = "https://jsonplaceholder.typicode.com/users";
+  const [data, setData] = useState<info[]>([]);
+
+  const getData = () => {
+    axios.get(baseURL).then((response) => {
+      setData(response.data);
+    });
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
   return (
     <div>
       <Header />
@@ -31,6 +48,7 @@ const Dashboard = () => {
             />
           ))}
         </div>
+        <Table data={data} />
       </div>
       <Footer />
     </div>
