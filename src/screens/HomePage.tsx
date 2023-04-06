@@ -20,6 +20,21 @@ const HomePage = () => {
       title: "Product 3",
       desc: "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
     },
+    {
+      id: 4,
+      title: "Product 4",
+      desc: "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+    },
+    {
+      id: 5,
+      title: "Product 5",
+      desc: "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+    },
+    {
+      id: 6,
+      title: "Product 6",
+      desc: "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
+    },
   ];
   return (
     <>
