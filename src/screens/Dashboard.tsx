@@ -25,6 +25,7 @@ const Dashboard = () => {
         <div className="row row-cols-1 row-cols-md-3 g-4 mt-3 flex-nowrap">
           {cardContents.map((item, index) => (
             <DashboardCard
+              key={index}
               dashboardCardTitle={item.title}
               totalOrder={item.totalOrder}
             />

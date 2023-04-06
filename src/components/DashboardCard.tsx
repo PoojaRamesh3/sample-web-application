@@ -17,9 +17,9 @@ const DashboardCard = (props: {
               <h6 className="card-subtitle mb-2 text-muted">
                 {props.dashboardCardTitle}
               </h6>
-              <p className="card-text">
+              <div className="card-text">
                 <h5 className="card-subtitle mb-2">{props.totalOrder}</h5>
-              </p>
+              </div>
             </div>
           </div>
         </div>
