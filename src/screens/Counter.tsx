@@ -23,10 +23,10 @@ const Counter = () => {
           {count}
         </h2>
         <button className="m-5" onClick={incrementCount}>
-          + 1
+          +1
         </button>
         <button className="m-5" onClick={decrementCount}>
-          - 1
+          -1
         </button>
       </div>
       <Footer />
