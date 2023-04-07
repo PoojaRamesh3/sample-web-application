@@ -29,6 +29,11 @@ const SideBar = () => {
       title: "Account",
       url: "/account",
     },
+    {
+      id: 6,
+      title: "Counter",
+      url: "/counter",
+    },
   ];
 
   return (

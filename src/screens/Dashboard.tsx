@@ -33,6 +33,7 @@ const Dashboard = () => {
   useEffect(() => {
     getData();
   }, []);
+
   return (
     <>
       <Header />

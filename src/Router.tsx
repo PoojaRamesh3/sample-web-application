@@ -5,6 +5,7 @@ import Dashboard from "./screens/Dashboard";
 import Orders from "./screens/Orders";
 import Products from "./screens/Products";
 import Account from "./screens/Account";
+import Counter from "./screens/Counter";
 
 const Router = () => {
   return (
@@ -16,6 +17,7 @@ const Router = () => {
         <Route path="/orders" element={<Orders />} />
         <Route path="/products" element={<Products />} />
         <Route path="/account" element={<Account />} />
+        <Route path="/counter" element={<Counter />} />
       </Routes>
     </BrowserRouter>
   );
