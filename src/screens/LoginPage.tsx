@@ -5,14 +5,37 @@ const LoginPage = () => {
   const logo = require("../assets/signup.png");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [validPassword, setValidPassword] = useState("");
 
   const navigate = useNavigate();
 
   const onLogin = () => {
-    if (username === "pooja.ramesh331@gmail.com" && password === "123") {
-      navigate("/home");
+    const uppercaseRegExp = /(?=.*?[A-Z])/;
+    const lowercaseRegExp = /(?=.*?[a-z])/;
+    const digitsRegExp = /(?=.*?[0-9])/;
+    const specialCharRegExp = /(?=.*?[#?!@$%^&*-])/;
+    const minLengthRegExp = /.{6,}/;
+    const uppercasePassword = uppercaseRegExp.test(password);
+    const lowercasePassword = lowercaseRegExp.test(password);
+    const digitsPassword = digitsRegExp.test(password);
+    const specialCharPassword = specialCharRegExp.test(password);
+    const minLengthPassword = minLengthRegExp.test(password);
+    if (!minLengthPassword) {
+      alert("At least minumum 6 characters");
+    } else if (!uppercasePassword) {
+      alert("At least one Uppercase");
+    } else if (!lowercasePassword) {
+      alert("At least one Lowercase");
+    } else if (!digitsPassword) {
+      alert("At least one digit");
+    } else if (!specialCharPassword) {
+      alert("At least one Special Characters");
     } else {
-      alert("Login failed! Invalid User Details");
+      setValidPassword("successfull");
+    }
+    if (username === "pooja.ramesh331@gmail.com" && validPassword != "") {
+      navigate("/home");
+      alert("Login Successfull");
     }
   };
 
@@ -38,7 +61,7 @@ const LoginPage = () => {
             Password
           </label>
           <input
-            type="password"
+            type="text"
             className="form-control"
             id="inputPassword"
             onChange={(e) => setPassword(e.target.value)}
