@@ -7,13 +7,24 @@ const LoginPage = () => {
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
+  const handelPasswordChange = (e: any) => {
+    var password = e.target.value;
+    var reg = new RegExp("^(?=.*d)(?=.*[a-z])(?=.*[A-Z]).{8,32}$");
+    var test = reg.test(password);
+    // if (test) {
+    //   setPassword(password);
+    // } else {
+    //   alert("fail");
+    // }
+  };
 
-  const onLogin = () => {
-    if (username === "pooja.ramesh331@gmail.com" && password === "123") {
-      navigate("/home");
-    } else {
-      alert("Login failed! Invalid User Details");
-    }
+  const onLogin = (e: any) => {
+    // if (username === "pooja.ramesh331@gmail.com" && password === "123") {
+    console.log(e);
+    navigate("/home");
+    // } else {
+    //   alert("Login failed! Invalid User Details");
+    // }
   };
 
   return (
@@ -38,15 +49,15 @@ const LoginPage = () => {
             Password
           </label>
           <input
-            type="password"
+            type="text"
             className="form-control"
             id="inputPassword"
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => handelPasswordChange(e)}
           />
         </div>
         <div className="pt-4">
           <button
-            onClick={() => onLogin()}
+            onClick={(e) => onLogin(e)}
             className="w-100 btn btn-lg btn-color text-uppercase"
             type="submit"
           >
