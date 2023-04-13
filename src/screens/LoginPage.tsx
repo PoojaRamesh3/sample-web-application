@@ -5,8 +5,12 @@ const LoginPage = () => {
   const logo = require("../assets/signup.png");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [validPassword, setValidPassword] = useState("");
-
+  const [validPassword, setValidPassword] = useState(false);
+  const [passLength, setPassLength] = useState(false);
+  const [passUpper, setPassUpper] = useState(false);
+  const [passLower, setPassLower] = useState(false);
+  const [passDigit, setDigit] = useState(false);
+  const [passSpecialChar, setSpecialChar] = useState(false);
   const navigate = useNavigate();
 
   const onLogin = () => {
@@ -20,22 +24,22 @@ const LoginPage = () => {
     const digitsPassword = digitsRegExp.test(password);
     const specialCharPassword = specialCharRegExp.test(password);
     const minLengthPassword = minLengthRegExp.test(password);
+
     if (!minLengthPassword) {
-      alert("At least minumum 6 characters");
+      setPassLength(true);
     } else if (!uppercasePassword) {
-      alert("At least one Uppercase");
+      setPassUpper(true);
     } else if (!lowercasePassword) {
-      alert("At least one Lowercase");
+      setPassLower(true);
     } else if (!digitsPassword) {
-      alert("At least one digit");
+      setDigit(true);
     } else if (!specialCharPassword) {
-      alert("At least one Special Characters");
+      setSpecialChar(true);
     } else {
-      setValidPassword("successfull");
+      setValidPassword(true);
     }
-    if (username === "pooja.ramesh331@gmail.com" && validPassword != "") {
+    if (username === "pooja.ramesh331@gmail.com" && validPassword === true) {
       navigate("/home");
-      alert("Login Successfull");
     }
   };
 
@@ -67,6 +71,31 @@ const LoginPage = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
+        {passLength === true && (
+          <div className="text-start p-1 text-danger pb-0 pt-0">
+            Password should be at least minumum 6 characters
+          </div>
+        )}
+        {passUpper === true && (
+          <div className="text-start p-1 text-danger pb-0 pt-0">
+            Password should be at least one Uppercase
+          </div>
+        )}
+        {passLower === true && (
+          <div className="text-start p-1 text-danger pb-0 pt-0">
+            Password should be at least one Lowercase
+          </div>
+        )}
+        {passDigit === true && (
+          <div className="text-start p-1 text-danger pb-0 pt-0">
+            Password should be at least one digit
+          </div>
+        )}
+        {passSpecialChar === true && (
+          <div className="text-start p-1 text-danger pb-0 pt-0">
+            Password should be at least one Special Characters
+          </div>
+        )}
         <div className="pt-4">
           <button
             onClick={() => onLogin()}
