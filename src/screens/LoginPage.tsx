@@ -6,11 +6,8 @@ const LoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [validPassword, setValidPassword] = useState(false);
-  const [passLength, setPassLength] = useState(false);
-  const [passUpper, setPassUpper] = useState(false);
-  const [passLower, setPassLower] = useState(false);
-  const [passDigit, setDigit] = useState(false);
-  const [passSpecialChar, setSpecialChar] = useState(false);
+  const [checkPassword, setCheckPassword] = useState("");
+
   const navigate = useNavigate();
 
   const onLogin = () => {
@@ -26,21 +23,21 @@ const LoginPage = () => {
     const minLengthPassword = minLengthRegExp.test(password);
 
     if (!minLengthPassword) {
-      setPassLength(true);
+      setCheckPassword("Password should be at least minumum 6 characters");
     } else if (!uppercasePassword) {
-      setPassUpper(true);
+      setCheckPassword("Password should be at least one Uppercase");
     } else if (!lowercasePassword) {
-      setPassLower(true);
+      setCheckPassword("Password should be at least one Lowercase");
     } else if (!digitsPassword) {
-      setDigit(true);
+      setCheckPassword("Password should be at least one digit");
     } else if (!specialCharPassword) {
-      setSpecialChar(true);
+      setCheckPassword("Password should be at least one Special Characters");
     } else {
       setValidPassword(true);
     }
     if (username === "pooja.ramesh331@gmail.com" && validPassword === true) {
       navigate("/home");
-      alert("Success");
+      alert("Login Success");
     }
   };
 
@@ -72,29 +69,9 @@ const LoginPage = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        {passLength === true && (
+        {validPassword === false && (
           <div className="text-start p-1 text-danger pb-0 pt-0">
-            Password should be at least minumum 6 characters
-          </div>
-        )}
-        {passUpper === true && (
-          <div className="text-start p-1 text-danger pb-0 pt-0">
-            Password should be at least one Uppercase
-          </div>
-        )}
-        {passLower === true && (
-          <div className="text-start p-1 text-danger pb-0 pt-0">
-            Password should be at least one Lowercase
-          </div>
-        )}
-        {passDigit === true && (
-          <div className="text-start p-1 text-danger pb-0 pt-0">
-            Password should be at least one digit
-          </div>
-        )}
-        {passSpecialChar === true && (
-          <div className="text-start p-1 text-danger pb-0 pt-0">
-            Password should be at least one Special Characters
+            {checkPassword}
           </div>
         )}
         <div className="pt-4">
