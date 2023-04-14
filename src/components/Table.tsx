@@ -1,7 +1,7 @@
 const Table = (props: any) => {
   return (
     <>
-      <table className="table table-striped">
+      <table className="table table-dark table-striped border-info table-hover">
         <thead>
           <tr>
             <th scope="col">Id</th>

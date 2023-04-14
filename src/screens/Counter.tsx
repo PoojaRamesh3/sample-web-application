@@ -19,13 +19,13 @@ const Counter = () => {
       <SideBar />
       <div className="outer-main position-absolute">
         <h1>Counter Screen</h1>
-        <h2 className="m-5 p-5" id="counter">
+        <h2 className="m-5 p-5 border border-5 border-dark" id="counter">
           {count}
         </h2>
-        <button className="m-5" onClick={incrementCount}>
+        <button className="m-5 btn btn-dark" onClick={incrementCount}>
           +1
         </button>
-        <button className="m-5" onClick={decrementCount}>
+        <button className="m-5 btn btn-dark" onClick={decrementCount}>
           -1
         </button>
       </div>
