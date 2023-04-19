@@ -37,7 +37,6 @@ const LoginPage = () => {
     }
     if (username === "pooja.ramesh331@gmail.com" && validPassword === true) {
       navigate("/home");
-      alert("Login Success");
     }
   };
 
